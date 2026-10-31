@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -73,3 +74,7 @@ export default defineConfig([
 ])
 
 ```
+=======
+# taskflow-project-management-saas
+A modern project management SaaS for organizing projects, tracking tasks, managing teams, and monitoring productivity.
+>>>>>>> 949d1c6dd85d1cd5f08345b22680470ed95b2322
