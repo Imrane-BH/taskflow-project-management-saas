@@ -1,24 +1,35 @@
-import { Outlet, NavLink } from 'react-router-dom';
+
+import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import Logo from '../components/Logo';
 import Navbar from '../components/Navbar';
+import Sidebar from '../components/Sidebar';
 
-export default function AppLayout(){
-    return(
-        <div className='min-h-screen mt-2'>
-            <header>
-                <Logo label="Taskflow"/>
-                <Navbar>
-                    <Logo label="Taskflow"/>
-                </Navbar> 
-            </header>
-               <div className="flex">
-                 <aside className=' md:w-1/4'>
-                   
-                 </aside>   
-                <main className='mt-4 w-full md:w-3/4 p-4 min-h[calc(100vh-4rem)] transition-all duration-200 bg-red-200 min-h-100'>
-                 <Outlet/>
-                 </main>
-               </div>
+export default function AppLayout() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <div className="min-h-screen">
+
+            {/* Mobile Navbar */}
+            <Navbar
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+            >
+                <Logo label="TaskFlow" />
+            </Navbar>
+
+            <div className="flex min-h-screen">
+
+                {/* Sidebar */}
+                <Sidebar isOpen={isOpen} />
+
+                {/* Main Content */}
+                <main className="mt-16 md:mt-0 w-full md:ml-[25%] md:w-3/4 p-4 min-h-screen transition-all duration-200">
+                    <Outlet />
+                </main>
+
+            </div>
         </div>
     );
 }
