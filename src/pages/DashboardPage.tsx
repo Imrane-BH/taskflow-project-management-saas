@@ -1,8 +1,11 @@
+import {Check} from 'lucide-react';
+import StatusCard from "../components/StatusCard"
 export default function DashboardPage() {
     return(
-        <div>
-            <h1 className="font-bold text-2xl m-3 mb-2">Dashboard</h1>
-            <p className="text-xl px-3 text-slate-600 ">Here's an overview of your workspace</p>
+        <div className='flex flex-col md:flex-row gap-4 bg-blue-300 radius-2xl ' >
+            <StatusCard title="completed" number={4} status="30% done" icon={<Check size={25} color="darkblue" />} />
+            <StatusCard title="completed" number={4} status="30% done" icon={<Check size={25} color="darkblue" />} />
+            <StatusCard title="completed" number={4} status="30% done" icon={<Check size={25} color="darkblue" />} />
         </div>
     )
 }
