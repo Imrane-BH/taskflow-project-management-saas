@@ -1,12 +1,11 @@
 
 import { NavLink } from 'react-router-dom';
 import { navigationItems } from './navigation';
+import {useStore} from '../store/sidebarStore';
 
-type SidebarProps = {
-    isOpen: boolean;
-};
 
-export default function Sidebar({ isOpen }: SidebarProps) {
+export default function Sidebar() {
+    const isOpen = useStore((state) => state.isOpen);
 
     return (
         <aside

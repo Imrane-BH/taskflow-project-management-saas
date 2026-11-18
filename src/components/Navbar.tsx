@@ -1,25 +1,22 @@
 
 import { Menu, X } from 'lucide-react';
-
-type NavProps = {
+import {useStore} from '../store/sidebarStore';
+    type NavProps = {
     children: React.ReactNode;
-    isOpen: boolean;
-    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export default function Navbar({
-    children,
-    isOpen,
-    setIsOpen
+    children
 }: NavProps) {
-
+    const isOpen = useStore((state) => state.isOpen);
+    const toggle = useStore((state) => state.toggle)
     return (
         <nav className="flex justify-between items-center w-full px-3 fixed top-0 left-0 bg-white h-16 z-50 md:hidden">
 
             {children}
 
             <button
-                onClick={() => setIsOpen(prev => !prev)}
+                onClick={() => toggle()}
                 aria-label={isOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isOpen}
             >

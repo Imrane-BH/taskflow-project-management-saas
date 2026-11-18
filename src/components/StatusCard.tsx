@@ -7,7 +7,7 @@ type CardProps = {
 
 export default function StatusCard({title,number,status,icon}: CardProps) {
     return(
-        <section className="flex justify-between w-full" >
+        <section className="flex  m-3 bg-blue-300 p-2 w-[350px] mx-auto " >
             <div>
                 <h3>{title}</h3>
                 <p>{number}</p>
